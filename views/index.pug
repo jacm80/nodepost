@@ -1,0 +1,54 @@
+html
+  head
+    title!= title
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0' )
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="/js/jquery-1.12.4.min.js "></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script> 
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    <script src="/js/index.js"></script>
+  body
+    -function prettyDate(dateString) {
+      -const aryMonths = ['Jun','Feb','Mar','Apr','May','Jun','Ago','Sep','Oct','Nov','Dec']
+      -var date = new Date(dateString)
+      -var dateNow = new Date()
+      -var Y = dateString.substring(0,4)
+      -var M = dateString.substring(5,7)
+      -var D = dateString.substring(8,10)
+      -var dateONLY = new Date(`${Y}-${M}-${D}`)
+      -var timeDiff = Math.abs(dateNow.getTime() - dateONLY.getTime());
+      -var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+      -if (diffDays == 1){
+        -var hours = date.getHours();
+        -var minutes = date.getMinutes();
+        -var ampm = hours >= 12 ? 'pm' : 'am';
+        -hours = hours % 12;
+        -hours = hours ? hours : 12; // the hour '0' should be '12'
+        -minutes = minutes < 10 ? '0'+minutes : minutes;
+        -var strTime = hours + ':' + minutes + ' ' + ampm;
+        -return strTime;
+      -}
+      -else if (diffDays == 2){
+        -return 'Yesterday';
+      -}
+      -return aryMonths[date.getMonth()] + ' ' + date.getDate();
+  -}
+    #content(class="col-md-12")
+        #banner-container(class="col-md-8 col-md-offset-2")
+          #banner-title HN Feed
+          #banner-message We <3 hacker news!
+        table(class="list-table col-md-8 col-md-offset-2")
+          tbody
+            each post in posts
+              tr(id='row-'+post.id)
+                td #{post.title}
+                  span(class="span-author")  - #{post.author} -
+                td #{prettyDate(post.date)}
+                td 
+                  span(class="btn-trash glyphicon glyphicon-trash",id=post.id, style="display:none;")

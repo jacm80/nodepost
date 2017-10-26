@@ -1,0 +1,51 @@
+
+#banner-container {
+    border: 1px solid #57B0D6;
+    background: #2C637B;
+    padding: 20px;
+    color: white;
+}
+
+#banner-title {
+    font-size: 40pt;
+    font-weight: bold;
+}
+
+/*
+.list-table thead, tbody { display: block; }
+
+.list-table tbody {
+    height: 500px;      
+    overflow-y: auto;   
+    overflow-x: hidden; 
+}
+*/
+
+.list-table tbody tr td {
+    border: 1px solid #fcc;
+    padding: 15px;
+    background: #fff;
+}
+
+
+.list-table tr:hover td {
+    background: none repeat scroll 0 0 #fafafa;
+    color: #000000;
+}
+
+.list-table tbody tr.selected td {
+    background: none repeat scroll 0 0 #FFCF8B;
+    color: #000000;
+}
+
+.list-table thead tr th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+    color: white;
+    background: #0050C1;
+}
+
+.span-author {
+    color: #57B0D6;
+}
