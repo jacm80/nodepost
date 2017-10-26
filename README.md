@@ -3,6 +3,10 @@
 Node Post Aplication, connect with algolia Api and save the result to mongodb database
 in table nodePosts 
 
+## Database
+
+Mongodb database name is **nodepost** (in uppercase), the name of the collection is **nodePost** with the capitalized "P"
+
 ## Install It
 ```
 npm install
