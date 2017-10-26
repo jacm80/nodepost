@@ -5,7 +5,7 @@ in table nodePosts
 
 ## Database
 
-Mongodb database name is **nodepost** (in uppercase), the name of the collection is **nodePost** with the capitalized "P"
+Mongodb database name is **nodepost** (in lowercase), the name of the collection is **nodePost** with the capitalized "P"
 
 ## Install It
 ```
@@ -21,8 +21,8 @@ npm run dev
 
 #### Source Directories
 * custom_modules: mongodb connection
-    - dbconn: connection file with mongo database, this fila have a flag POPULATE_TABLE (line 8), if the variable is set to true
-    ever sync the collection nodePost with algolia api, the idea is sync only time, and set false the var 
+    - dbconn: connection file with mongo database, this file have a var flag **POPULATE_TABLE** (line 8), if the variable is set to true
+    ever sync the collection nodePost with algolia api, the idea is sync only time, and set false this var. 
 * models: mongodb schemas
     - nodePost.model.js
 * views: template pug, html template
@@ -48,5 +48,5 @@ npm test
 ```
 
 ### Try It
-* Point you're browser to [http://localhost:3000/api/v1/nodepost](http://localhost:3000/api/v1/nodepost)
-* Invoke the REST endpoint `curl http://localhost:3000/api/v1/nodepost` to get list of node posts
+* Point you're browser to [http://localhost:3000/api/v1/nodepost](http://localhost:3000/api/v1/nodepost) to get list of node post.
+* Invoke the REST endpoint `curl http://localhost:3000/api/v1/nodepost`
