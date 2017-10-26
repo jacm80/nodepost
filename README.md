@@ -43,13 +43,6 @@ npm start
 npm test
 ```
 
-#### Deploy to the Cloud
-e.g. CloudFoundry
-
-```
-cf push nodePost
-```
-
 ### Try It
 * Point you're browser to [http://localhost:3000/api/v1/nodepost](http://localhost:3000/api/v1/nodepost)
-* Invoke the example REST endpoint `curl http://localhost:3000/api/v1/nodepost`
+* Invoke the REST endpoint `curl http://localhost:3000/api/v1/nodepost` to get list of node posts
