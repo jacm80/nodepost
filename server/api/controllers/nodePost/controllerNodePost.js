@@ -15,7 +15,7 @@ export class ControllerNodePost {
     }
 
     all(req, res) {
-        nodePost.find({}, (error,docs) => {
+        nodePost.find({},null,{sort:{date:-1}}, (error,docs) => {
             res.render('index',{ title: 'Node Post', message: 'Welcome!', 'posts': docs})
         })
     }
