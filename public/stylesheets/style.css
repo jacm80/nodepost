@@ -29,6 +29,7 @@
 
 
 .list-table tr:hover td {
+    cursor: pointer;
     background: none repeat scroll 0 0 #fafafa;
     color: #000000;
 }
